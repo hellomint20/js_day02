@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Quiz02</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var member = [ 
+			{ 'id' : 'aaa','name' : '홍길동', 'age' : 20 }, 
+			{'id' : 'bbb', 'name' : '김개똥', 'age' : 30 }, 
+			{'id' : 'ccc', 'name' : '고길동', 'age' : 40 } 
+		];
+		const allMember = () => {
+			let msg = "";
+			msg += '<table border="1">';
+			msg += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>";
+			
+			for (i = 0; i < member.length; i++) {
+				msg += "<tr>"
+					msg += `<td>${member[i].id}</td> 
+				<td onclick="info('${member[i].id}')">${member[i].name}</td>
+				<td>${member[i].age}</td>`;
+				msg += "</tr>"
+			}
+			msg += "</table>"
+			document.getElementById("table").innerHTML = msg
+		}
+		const info = ( id ) => {
+			const user = member.filter( (user)=>
+			(id === user.id)?user:"")[0];
+			console.log( user );
+			msg = `<b>아이디</b> : ${user.id}<br>
+				<b>이름</b> : ${user.name}<br>
+				<b>나이</b> : ${user.age}<br>`
+			document.getElementById("table").innerHTML = msg;
+		}
+		const getMember = () => {
+			const id = document.getElementById("id").value
+			let msg = ""
+			const user = member.filter( (value,index)=>
+								(id === value.id)?value : "" )[0]; 
+			//console.log(user);
+			msg += '<table border="1">'
+			msg += "<tr><th>아이디</th> <th>이름</th> <th>나이</th></tr>"
+			msg += "<tr>";
+			msg += `<td>${user.id}</td> 
+			<td>${user.name} </td>
+			<td>${user.age}</td>`;
+			msg += "</tr>";
+			msg += "</table>"
+			document.getElementById("table").innerHTML = msg;
+		}
+		const deleteMember = () => {
+			const id = document.getElementById("del").value
+			member = member.filter( (value, index) => {
+				if(id !== value.id){
+					return member[index];
+				}
+			});
+			allMember();
+		}
+	</script>
+
+	<div id="table">목록을 보여 줍니다</div>
+	<hr>
+	<button type="button" onclick="allMember()">모든 회원 보기</button>
+	<hr>
+	<input type="text" id="id" placeholder="input id">
+	<br>
+	<button type="button" onclick="getMember()">특정 회원 조회</button>
+	<hr>
+	<input type="text" id="del" placeholder="input id">
+	<br>
+	<button type="button" onclick="deleteMember()">특정 회원 삭제</button>
+</body>
+</html>
