@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Quiz01</title>
+
+<style type="text/css">
+	img { width: 200px; height: 200px;}
+</style>
+
+<script type="text/javascript">
+	let x = 1;
+	let msg = "";
+	const chimg01 = () =>{
+		let img = document.getElementById("img");
+	}
+	const previmg = () =>{
+		if(x == 1){
+			x = 8;
+		}else{
+			--x;
+		}
+		msg = "test"+x+".jpg";
+		img.src = msg;
+	} 
+	const nextimg = () =>{
+		if(x == 8){
+			x = 1;
+		}else{
+			++x;
+		}
+		msg = "test"+x+".jpg";
+		img.src = msg;
+	}
+</script>
+</head>
+<body>
+	<img id="img" src="test1.jpg" onclick="chimg01()"><br>
+	<button type="button" id="prev" onclick="previmg()">이전 사진</button>
+	<button type="button" id="next" onclick="nextimg()">다음 사진</button>
+</body>
+</html>
