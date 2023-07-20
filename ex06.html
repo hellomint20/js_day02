@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Page_6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const city = ["서울", "부산", "인천"];
+		document.write(city);
+		city[3]="강릉";
+		document.write("<hr>"+city);
+		document.write("<hr> city type : "+typeof city);
+		const join01 = city.join()
+		const join02 = city.join(" - ")
+		document.write("<hr> join01 : "+join01);
+		document.write("<hr> join01 type : "+ typeof join01);
+		document.write("<hr> join02 : "+join02);
+		document.write("<hr> join02 type : "+ typeof join02);
+	</script>
+</body>
+</html>
