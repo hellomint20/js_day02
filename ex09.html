@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Page_9</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const d = [111, 222, 333];
+		function mapArr(value){	//map은 return 사용 가능
+			return `<b style="color:red;">${value}</b>`;
+		}
+		const result = d.map(mapArr);
+		document.write(result);
+		
+		document.write("<hr>");
+		/*const result02 = d.map((value) => {
+			return value+1000;
+		});*/
+		const result02 = d.map((value) => value+1000 );
+		document.write(result02);
+		
+		document.write("<hr>");
+		d.forEach ((value, index) => {
+			d[index] = value+2000;
+		})
+		document.write(d);
+	</script>
+</body>
+</html>
