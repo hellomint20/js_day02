@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Page_8</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const d = ["서울", "강원도", "충청도"];
+		for(var i = 0; i<d.length; i++){
+			document.write(`배열 값 : ${d[i]}<br>`);
+		}
+		document.write("<hr>- 함수 사용<br>");
+		/*
+		function printArr(data, index){
+			document.write(`${index} . ${data}<br>`);
+		}*/
+		var printArr = (data, index) => {
+			document.write(`${index} . ${data}<br>`);
+		}
+		d.forEach(printArr);
+		
+		document.write("<hr>- 직접 대입<br>");
+		d.forEach((data, index) => {
+			document.write(`${index} : ${data}<br>`);
+		});
+		
+		document.write("<hr>- 테이블 이용<br>");
+		let msg = "<table border='1'>";
+		msg += "<tr><th>이름</th></tr>";
+		
+		d.forEach( (d) => {
+			msg += "<tr>";
+			msg +=	`<td>${d}</td>`;
+			msg += "</tr>"
+		})
+		msg += "</table>";
+		document.write(msg);
+	</script>
+</body>
+</html>
