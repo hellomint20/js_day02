@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Page_7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var k = ["서울", "부산"];
+		document.write("기본 배열 : "+k+"<hr>");
+		
+		k.push("인천","광주");
+		document.write(`push : ${k}<br>`);
+		
+		k.pop();
+		document.write(`pop : ${k}<br>`);
+		
+		document.write("<hr>");
+		k.unshift("한국","강릉");
+		document.write(`unshift : ${k}<br>`);
+
+		k.shift();
+		document.write(`shift : ${k}<br>`);
+
+		document.write("<hr>");
+		var test = [111,222];
+		var d = k.concat(test);
+		document.write(`concat : ${d}<br>`);
+		</script>
+</body>
+</html>
