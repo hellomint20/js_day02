@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Day2 Page_1</title>
+<script type="text/javascript">
+	const clickEvent = () =>{
+		//alert("실행");
+		const n = document.getElementById("name");
+		const n2 = document.getElementById("name2");
+		console.log(n);
+		//n.value = "안녕하세요";
+		n2.value = n.value;
+		n.value = "";
+	}
+</script>
+<style type="text/css">
+	#name {width: 30px;}
+</style>
+</head>
+<body>
+	<input type="text" id="name" placeholder="input name"><br>
+	<input type="text" id="name2" placeholder="input name2"><br>
+	<input type="button" onclick="clickEvent()" value="클릭">
+<hr>
+	event<br>
+	&nbsp;- 사용자가 동작하는 모든 행위<br>
+	&nbsp;- 키보드를 누를 경우, 놨을 경우, 마우스를 움직이는 경우 등 ...<hr>
+	마우스 이벤트<br>
+	&nbsp;- click : 마우스 클릭이 발생하는 경우<br>
+	&nbsp;- dbclick : 더블클릭<br>
+	&nbsp;- mousedown : 눌렸을 경우<br>
+	&nbsp;- mousemove : 포인터가 움직이는 경우<br>
+	&nbsp;- mouseover : 포인터가 특정 태그에 들어갔을 경우 등 ...<hr>
+	키보드 이벤트<br>
+	&nbsp;- keypress : 키보드가 눌렸을 경우<br>
+	&nbsp;- keydown : 누르는 동안<br>
+	&nbsp;- keyup : 키가 올라왔을 경우 등 ...<br>
+</body>
+</html>
